@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        /*cor do fundo*/
+        
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(243, 158, 210));
+        }
+        */
+        /*ajustes da BOX do formulário*/
+        219, 101, 174
+        .box{
+            color: rgb(0, 10, 0);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 15px;
+            width: 40%;
+        }
+        */
+        /*efeito da linha de borda do formulário*/
+        
+        fieldset{
+            border: 3px solid rgb(0, 0, 0);
+        }
+        */
+        /*ajustes na legenda do formulário*/
+        
+        legend{
+            border: 1px solid rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+            background-color: rgb(0, 0, 0);
+            border-radius: 8px;
+        }
+        */
+        /*efeito e posição das box*/
+        
+        .inputBox{
+            position: relative;
+        }
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 1px solid rgb(0, 0, 0);
+            outline: none;
+            color: rgb(0, 0, 0);
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+        */
+        /*efeitos das LABELs pra o nome subir, e pole valid não desce a legenda*/
+        
+        .labelInput{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+        }
+        .inputUser:focus ~ .labelInput,
+        .inputUser:valid ~ .labelInput{
+            top: -20px;
+            font-size: 12px;
+            color: rgb(255, 255, 255);
+        }
+        */
+        /*ajustes data nascimento*/
+        
+        #data_nascimento{
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+        */
+        /*ajustes no botão enviar*/
+        
+        #submit{
+            background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        */
+        /*efeito ao passar o mouse por cima, escurecer*/
+        
+        #submit:hover{
+            background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
+        }
+        */
+
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Simples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: rgb(245, 176, 245);
+            color: rgb(255, 255, 255);
+            padding: 10px 0;
+            text-align: center;
+}
+nav {
+            margin: 15px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background: rgb(245, 176, 245);
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+
+    </style>
+</head>
+<body>
+  
+    <header>
+    <h1>Formulário</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="pag2.html">Formulário</a>
+        <a href="pag3.html">Estatísticas</a>
+        <a href="pag4.html">Leis</a>
+        <a href="pag5.html">Ajuda</a>
+    </nav>
+</header>
+   <br>
+    <!-- Criando uma BOX do formulário-->
+    
+    <div class="box" >
+        <form action="">
+            <fieldset>
+                <legend><b>Preencha seu dados</b></legend>
+                <br>
+   
+    <!-- Criando Input pra Nome-->
+    
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                <br><br>
+    
+    <!-- Criando Input pra E-mail-->
+    
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
+                </div>
+                <br><br>
+   
+    <!-- Criando Input pra Telefone-->
+    
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone" class="labelInput">Telefone</label>
+                </div>
+ 
+    <!-- Criando Label pra seleção de genero-->
+    
+                <p>Sexo:</p>
+                <input type="radio" id="feminino" name="genero" value="feminino" required>
+                <label for="feminino">Feminino</label>
+                <br>
+                <input type="radio" id="masculino" name="genero" value="masculino" required>
+                <label for="masculino">Masculino</label>
+                <br>
+                <input type="radio" id="outro" name="genero" value="outro" required>
+                <label for="outro">Outro</label>
+                <br><br>
+   
+    <!-- Criando type DATE para nascimento-->
+    
+                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+                <br><br><br>
+  
+    <!-- Criando Input pra Cidade-->
+    
+                <div class="inputBox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade" class="labelInput">Cidade</label>
+                </div>
+                <br><br>
+  
+    <!-- Criando Input pra Estado-->
+    
+                <div class="inputBox">
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado" class="labelInput">Estado</label>
+                </div>
+                <br><br>
+    
+    <!-- Criando Input pra Endereço-->
+    
+                <div class="inputBox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    <label for="endereco" class="labelInput">Endereço</label>
+                </div>
+                <br><br>
+    
+    <!-- Criando type pra SUBMIT-->
+    
+                <input type="submit" name="submit" id="submit">
+   
+            </fieldset>
+        </form>
+    </div>
+    <br>
+    <footer>
+        <p>&copy; © 2024 Dia Internacional para a Eliminação da Violência Contra as Mulheres.</p>
+    </footer>
+    
+</body>
+</html>
